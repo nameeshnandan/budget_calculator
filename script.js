@@ -52,15 +52,24 @@ function login(){
 // home 
 
 // income 
-userdispData=JSON.parse(localStorage.getItem(userid))
+// USERNAME = localStorage.getItem('username');
+// USERID = localStorage.getItem('userid');
+// USERPASSWORD = localStorage.getItem('password')
+// userdispData=JSON.parse(localStorage.getItem(userid))
 // console.log(userdispData);
-displayName=userdispData.username
-usernameDisplay.innerHTML=`Welcome ${displayName}`;
+// // displayName=userdispData.username
+// usernameDisplay.innerHTML=`Welcome ${username}`;
 function addIncome(){
     
     income=incomeName.value;
     incomeAmount=incomeAmt.value;
-    var balance=incomeAmt.value;
+    if(income==""){
+        alert('please enter the income title')
+    }
+    else if(incomeAmount==0){
+        alert('please enter the income amount')
+    }
+    // balance=incomeAmt.value;
     // let incomeData=[income,incomeAmount]
     // for(let data in incomeData)
     // tableData=` 
@@ -69,19 +78,21 @@ function addIncome(){
     //     <td>${data.incomeAmount}</td>
         
     // </tr>`
-
+    else{
     tableData=` 
      <tr >
         <td>${income}</td>
         <td>${incomeAmount}</td>
         
-    </tr>`
+     </tr>`
         document.getElementById('incomeRow').innerHTML+=tableData;
-
+        addBalance()
+    }
         
     
   
 }
+
 document.getElementById("balanceScreen").value=0;
 var balanceAMT = parseInt(document.getElementById("balanceScreen").value);
 function addBalance(){
@@ -89,9 +100,14 @@ function addBalance(){
     
     // balance = parseInt(balanceAMT+incomeAmt); 
     // balance=incomeAMT+balanceAMT    
-    balance=parseInt(balanceAMT+=incomeAMT )
+    balance=(balanceAMT+=incomeAMT )
+    if(balance==0){
+        alert("please enter the value")
+    }
+    else{
     document.getElementById("balanceScreen").value = balance;
     // balanceAMT=document.getElementById("balanceScreen").value 
+    }
 }
 
 // expense 
@@ -105,7 +121,13 @@ function subBalance(){
 function addExpense(){
     expense=expenseName.value;
     expenseAmount=expenseAmt.value;
-    
+    if(expense==""){
+        alert('Please enter the expense title');
+    }
+    else if(expenseAmount==0){
+        alert('Please enter the expense amount');
+    }
+    else{
     tabledata=` 
      <tr >
         <td>${expense}</td>
@@ -113,6 +135,8 @@ function addExpense(){
         
     </tr>`
         document.getElementById('expenseRow').innerHTML+=tabledata;
+        subBalance()
+    }
 
         
 }
