@@ -1,0 +1,68 @@
+
+body{
+    /* width: 1080px; */
+    background-image: url('images/bg\ img\ 2.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    
+}
+.login{
+    width: 300px;
+    /* border: 2px solid black; */
+    background-color: rgba(255, 255, 255, 0.32);
+    /* background-image: linear-gradient(to bottom right, rgba(135,154,158,255) , rgba(206,205,187,255)); */
+
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.login-logo{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    width: 60px;
+    border: 0px solid black;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.head{
+    color:rgba(0, 0, 255, 0.692) ;
+}
+.login-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-btn{
+    display: flex;
+    justify-content: center;
+}
+.login-btn button{
+    background-image: linear-gradient(to  right, rgba(0, 0, 255, 0.482) , rgba(0, 72, 130, 0.737));
+    color: white;
+    border-color: blueviolet
+}
+.login-btn button:hover{
+    border-color: transparent;
+    background-color: rgba(0, 0, 255, 0.482);
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+
+/* modal  */
+#mainModal{
+    background-color: rgba(77, 77, 115, 0.148);
+}
+#secondModal{
+    background-color: rgba(141, 79, 79, 0.333);
+}
