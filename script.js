@@ -35,8 +35,9 @@ function login(){
         dispName=userData.username
         if(upassword==userData.password){
             
-            alert('log in successfull');
+            // alert('log in successfull');
             window.location.href='home.html';
+            document.getElementById('loginModal').style.display='block'
 
         }
         else{
@@ -52,13 +53,14 @@ function login(){
 // home 
 
 // income 
-// USERNAME = localStorage.getItem('username');
-// USERID = localStorage.getItem('userid');
-// USERPASSWORD = localStorage.getItem('password')
-// userdispData=JSON.parse(localStorage.getItem(userid))
+USERNAME = localStorage.getItem('userid');
+// console.log(USERNAME);
+USERID = localStorage.getItem('userid');
+USERPASSWORD = localStorage.getItem('password')
+userdispData=JSON.parse(localStorage.getItem(USERID))
 // console.log(userdispData);
-// // displayName=userdispData.username
-// usernameDisplay.innerHTML=`Welcome ${username}`;
+// displayName=userdispData.username
+usernameDisplay.innerHTML=`Welcome `;
 function addIncome(){
     
     income=incomeName.value;
@@ -151,7 +153,7 @@ function clearAll(){
 
 
 // logout 
-letlocalStorage.getItem('userid')
+localStorage.getItem('userid')
 function logout(){
     document.getElementById('homeModal').style.display='block'
 
